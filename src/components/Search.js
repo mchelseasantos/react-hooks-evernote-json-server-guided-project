@@ -1,9 +1,16 @@
 import React from "react";
 
-function Search() {
+function Search({setSearch}) {
+
   return (
     <div className="filter">
-      <input id="search-bar" type="text" placeholder="Search Notes" />
+
+      <input id="search-bar" onChange={(e) => { 
+        setSearch(e.target.value)
+      }}
+       type="text" 
+       placeholder="Search Notes" />
+       
     </div>
   );
 }

@@ -1,11 +1,17 @@
 import React from "react";
 
-function NoteViewer() {
+function NoteViewer({displayNote, editNote, setEditNote}) {
+
+  const handleClick = () => {
+   setEditNote(displayNote)
+  }
+
   return (
     <>
-      <h2>Title</h2>
-      <p>Body</p>
-      <button>Edit</button>
+      <h2>{displayNote.title}</h2>
+      <p>{displayNote.body}</p>
+      <button onClick={handleClick} 
+      >Edit</button>
     </>
   );
 }
